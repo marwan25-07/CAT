@@ -1,0 +1,53 @@
+import numpy as np
+import torch
+from torch import nn, optim
+import torch.nn.functional as F
+from torch.utils.data import TensorDataset, DataLoader
+#import AE from model
+
+class Train:
+   def train_model(model, train_data, train_target, epoch):
+       device = torch.device("cuda" if torch.cuda.is_available() else "cpu")#transfer to avaialble device 
+       model = model().to(device)
+       loss_function = nn.MSELoss()
+       optimizer = optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-8)  
+       
+       
+       # Convert all data to tensors
+       train_data_tensor = torch.tensor(train_data, dtype=torch.float32)
+       target_tensor = torch.tensor(train_target, dtype=torch.float32)
+       
+       # Create dataset and dataloader
+       dataset = TensorDataset(train_data_tensor, target_tensor)
+       dataloader = DataLoader(dataset, batch_size=64, shuffle=True)
+       
+       
+       # Training loop
+       epochs= epoch
+       epoch_losses = [] 
+       
+       for epoch in range(epochs):
+           model.train()
+           epoch_losses = []
+           for batch_x, batch_y in dataloader:
+               x = batch_x.to(device)
+               y_true = batch_y.to(device).unsqueeze(1)
+                
+               #decode, encode, predict
+               optimizer.zero_grad()
+               z_raw = model.encoder(x)
+               mu = model.fc_mu(z_raw)
+               logvar = model.fc_logvar(z_raw)
+               z = model.reparametrize(mu, logvar)
+               prop_pred = model.mlp_head(z)
+               reconstruct = model.decoder(z)
+       
+               #compute loss score 
+               loss = model.loss_function(x, reconstruct, mu, logvar, prop_pred, y_true)
+               loss.backward() #assess weights of previous nodes
+               optimizer.step() #using the adam optimizer it adjusts the weights
+       
+               epoch_losses.append(loss.item())  # works out overall average train loss
+           avg_train_loss = sum(epoch_losses) / len(epoch_losses)    
+           loss_iter = f"Epoch {epoch+1}/{epochs}, Avg Loss: {avg_train_loss:.4f}"
+       return loss_iter
