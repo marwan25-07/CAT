@@ -11,4 +11,5 @@ To operate the model, a 2D reaction SMILES string is first provided to the model
 ## Tutorial 
 The [name of script] script provides an example on how to run the model. 
 
+## Contact
 If you have any queries please feel free to contact Marwan via [email](mz354@ic.ac.uk). 
