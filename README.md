@@ -1,2 +1,2 @@
 # MOONN
-A machine learning model for predicting liquid phase rate constants, featuring training and inference. 
+ MOONN is a repository containing a machine learning model for the prediction of Liquid-Phase Rate Constants, using only a reaction's 2D SMILES string as input. The repository contains data in which was used to train our model, requirement installations/versions, modular code featuring the architecture used for prediction and finally a notebook that provides a walkthrough for users to trail the model. 
