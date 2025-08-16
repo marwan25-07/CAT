@@ -1,4 +1,4 @@
-# MOONN
+# CAT
 [![DOI](https://zenodo.org/badge/1037222864.svg)](https://doi.org/10.5281/zenodo.16887610)
 ## Project Description
 MOONN is a repository containing a machine learning model that was developed for the prediction of Liquid-Phase Rate Constants, using only a reaction's 2D SMILES string as input.
