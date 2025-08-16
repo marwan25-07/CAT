@@ -2,3 +2,8 @@ pandas == 2.2.2
 numpy == 1.26.4
 torch == 2.4.1
 scikit-learn == 1.5.1
+GPy == 1.13.2
+rdkit == 2024.9.6
+joblib == 1.4.2
+mordred == 1.2.0
+GPyOpt == 1.2.6
