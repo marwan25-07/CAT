@@ -12,4 +12,4 @@ To operate the model, a 2D reaction SMILES string is first provided to the model
 The '**tutorial**' script provides a working example of the model in use, where uses can submit a SMILES reaction to determine the most optimal solvent. Further instructions on how to prepare the model for use is provided in the script.   
 
 ## Contact
-If you have any queries please feel free to contact Marwan via [email](mz354@ic.ac.uk). 
+If you have any queries please feel free to contact Marwan via email at mz354@ic.ac.uk. 
