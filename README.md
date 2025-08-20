@@ -1,6 +1,6 @@
 # CAT
 [![DOI](https://zenodo.org/badge/1037222864.svg)](https://doi.org/10.5281/zenodo.16887610)
-## Project Description
+## Overview
 CAT is a machine learning framework for predicting liquid-phase rate constants. It was designed as a data-driven alternative to experimental or kinetic modelling approaches, enabling users to identify the most optimal solvent for a given reaction from a set of commonly used solvents.
 
 The repository includes:
