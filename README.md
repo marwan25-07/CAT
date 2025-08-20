@@ -7,6 +7,7 @@ The repository includes:
 - Installation requirements and dependency versions to use CAT
 - CAT's training architecture
 - CAT's model architecture
+- CAT's model weights
 - A Jupyter notebook tutorial with a step-by-step walkthrough
 
 ## How it works
