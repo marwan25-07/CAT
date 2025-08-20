@@ -1,15 +1,22 @@
 # CAT
 [![DOI](https://zenodo.org/badge/1037222864.svg)](https://doi.org/10.5281/zenodo.16887610)
 ## Project Description
-CAT is a repository containing a machine learning model that was developed for the prediction of Liquid-Phase Rate Constants, using only a reaction's 2D SMILES string as input.
-The model was created as a data driven alternative to traditional experimental or kinetic modelling efforts, to identify the most optimal pre-existing solvent from a set of commonly used solvents for a given reaction. 
-The repository contains data in which was used to train our model, requirement installations/versions, modular code featuring the architecture used for prediction and finally a notebook that provides a walkthrough for users to trail the model. 
+CAT is a machine learning framework for predicting liquid-phase rate constants. It was designed as a data-driven alternative to experimental or kinetic modelling approaches, enabling users to identify the most optimal solvent for a given reaction from a set of commonly used solvents.
+
+The repository includes:
+- Installation requirements and dependency versions to use CAT
+- CAT's training architecture
+- CAT's model architecture
+- A Jupyter notebook tutorial with a step-by-step walkthrough
 
 ## How it works
-To operate the model, a 2D reaction SMILES string is first provided to the model as input. The reactant SMILES string is retrieved from the input and is converted into a set of features using the Mordred feature set, available in RDKIT. The featurised reactant is than encoded into a latent space, where consequently the solvent which yields the highest rate constant is calculated via the surrogate model of a Gaussian optimisation step. 
+1. **Input:** A 2D reaction SMILES string is provided.
+2. **Feature Extraction:** The reactant SMILES is parsed and converted into a set of features using the Mordred descriptor set.
+3. **Latent Encoding:** The featurised reactant is then encoded into a latent representation.
+4. **Solvent Selection:** A Gaussian surrogate model is optimised using the latent repersentation and is subsequently used to predict the most optimal solvent for the input reaction. 
 
 ## Tutorial 
-The '**tutorial**' script provides a working example of the model in use, where uses can submit a SMILES reaction to determine the most optimal solvent. Further instructions on how to prepare the model for use is provided in the script.   
+The '**tutorial**' script provides a working example of the model in use, where users can submit a SMILES reaction to the CAT model. Further instructions on how to set up the model is provided in the script.   
 
 ## Contact
 If you have any queries please feel free to contact Marwan via email at marwan.zalita24@imperial.ac.uk. 
